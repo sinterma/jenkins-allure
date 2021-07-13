@@ -20,6 +20,7 @@ public class TelegramTests3 {
     @Disabled
     void some2Test() {
         assertTrue(false);
+
     }
 
     @Test
