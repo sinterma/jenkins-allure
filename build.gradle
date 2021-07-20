@@ -38,6 +38,8 @@ tasks.withType(JavaCompile) {
 }
 
 tasks.withType(Test) {
+    systemProperties(System.getProperties())
+    systemProperty("browser", System.getProperty("browser","opera"))
     useJUnitPlatform()
 
     testLogging {
@@ -49,8 +51,9 @@ tasks.withType(Test) {
     }
 }
 
-task fake_test(type: Test) {
-    useJUnitPlatform {
-        includeTags 'fake'
+task some_run(type: Test) {
+    useJUnitPlatform{
+        includeTags 'terminal'
+
     }
 }
